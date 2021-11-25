@@ -103,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
                 completionHandler: {granted, error in
                     // For iOS 10 data message (sent via FCM)
                     Messaging.messaging().delegate = self
+                    //This works only on iOS10
             })
         } else {
             let settings: UIUserNotificationSettings =
