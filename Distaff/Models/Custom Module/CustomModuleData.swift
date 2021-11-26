@@ -27,7 +27,7 @@ struct CustomModuleData : Codable {
         case status = "status"
         case clothstyle = "clothstyle"
         case shapesArray = "shape"
-        case shapeBorderColorArray = "shape_border_colour"
+        case shapeBorderColorArray = "shape_colour"
         case shapeFillColorArray = "shape_fill_colour"
         case sizePriceList = "size"
     }
@@ -39,7 +39,7 @@ struct CustomModuleData : Codable {
         clothstyle = try values.decodeIfPresent([Clothstyle].self, forKey: .clothstyle)
         shapesArray = try values.decodeIfPresent([Shape].self, forKey: .shapesArray)
         shapeBorderColorArray = try values.decodeIfPresent([shape_border_colour].self, forKey: .shapeBorderColorArray)
-        shapeFillColorArray = try values.decodeIfPresent([shape_border_colour].self, forKey: .shapeFillColorArray)
+        shapeFillColorArray = try values.decodeIfPresent([shape_border_colour].self, forKey: .shapeBorderColorArray)
         sizePriceList = try values.decodeIfPresent([SizePriceData].self, forKey: .sizePriceList)
         
     }
