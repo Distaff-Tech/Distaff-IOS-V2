@@ -21,6 +21,7 @@ class SignInVM {
     
     var instagramLogin: InstagramLoginViewController!
     var objKeychain = KeychainSwift()
+    // New change
     
     func formValidations(_ request:SignIN.Request) -> Bool {
         var message = ""
