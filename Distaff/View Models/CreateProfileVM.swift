@@ -14,44 +14,44 @@ class CreateProfileVM : NSObject {
     
     func formValidations(_ request:CreateProfile.Request) -> Bool {
         var message = ""
-         if request.isFromEditProfile == 1 {
+        if request.isFromEditProfile == 1 {
             
             if request.profileData?.data?.user_name != "" && request.userName?.trimmingCharacters(in: .whitespaces) == "" {
                 message = Messages.Validation.enterUserName
             }
-                
+            
             else if request.profileData?.data?.fullname != "" && request.fullName?.trimmingCharacters(in: .whitespaces) == "" {
                 message = Messages.Validation.enterFullName
             }
-                
+            
             else if request.profileData?.data?.address != "" && request.completeAddress?.trimmingCharacters(in: .whitespaces) == "" {
                 message = Messages.Validation.enterAddress
                 
             }
             else  {
-             return true
+                return true
             }
             
         }
-            
-         else {
-            if request.fullName?.trimmingCharacters(in: .whitespaces) == "" {
-                           message = Messages.Validation.enterFullName
-                       }
-            
-            else  {
-             return true
-            }
-            
-        }
-      
         
-    
-    if message != "" {
-    Alert.displayAlertOnWindow(with: message)
+        else {
+            if request.userName?.trimmingCharacters(in: .whitespaces) == "" {
+                message = Messages.Validation.enterUserName
+            } else if request.fullName?.trimmingCharacters(in: .whitespaces) == "" {
+                message = Messages.Validation.enterFullName
+                
+            } else {
+                
+                return true
+            }
+            
+        }
+        
+        if message != "" {
+            Alert.displayAlertOnWindow(with: message)
+        }
+        return false
     }
-    return false
-}
 
 
 func callCreateProfileApi(_ request: CreateProfile.Request,completion:@escaping(_ data:CreateProfileModel?) -> Void) {
