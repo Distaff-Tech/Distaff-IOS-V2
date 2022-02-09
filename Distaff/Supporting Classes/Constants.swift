@@ -15,38 +15,41 @@ private enum BaseUrl : String {
 //    case live = "http://3.21.18.92:8001/"
 //    case live = "http://127.0.0.1:8000/"
     case live = "http://3.21.18.92/"
+    case development = "http://3.21.18.92:7000/"
 }
 struct WebServicesApi {
     static let baseUrl = BaseUrl.live.rawValue
+    static let developmentUrl = BaseUrl.development.rawValue
+
 //    static let imageBaseUrl = "http://3.21.18.92:8001"  // live
 //    static let imageBaseUrl = "http://127.0.0.1:8000"  // live
     static let imageBaseUrl = "http://3.21.18.92"  // live
     //static let imageBaseUrl = "http://157.245.218.104:8000"  // local
     
-    static let signUp = WebServicesApi.baseUrl +  "signup"
-    static let signIn = WebServicesApi.baseUrl +  "login"
-    static let createProfile = WebServicesApi.baseUrl +  "create_profile"
+    static let signUp = WebServicesApi.developmentUrl +  "signup"
+    static let signIn = WebServicesApi.developmentUrl +  "login"
+    static let createProfile = WebServicesApi.developmentUrl +  "create_profile"
     static let addCard = WebServicesApi.baseUrl +  "add_card"
     
     static let forgotPassword = WebServicesApi.baseUrl +  "sendverifylink"
     static let socialLogin = WebServicesApi.baseUrl +  "social_login"
-    static let get_colour_size = WebServicesApi.baseUrl +  "get_fabric_size"
-    static let addpost = WebServicesApi.baseUrl +  "addpost"
+    static let get_colour_size = WebServicesApi.developmentUrl +  "get_fabric_size"
+    static let addpost = WebServicesApi.developmentUrl +  "addpost"
     
-    static let get_homePage = WebServicesApi.baseUrl +  "get_homePage?"
-    static let like_dislike_post = WebServicesApi.baseUrl +  "like_dislike_post"
+    static let get_homePage = WebServicesApi.developmentUrl +  "get_homePage?"
+    static let like_dislike_post = WebServicesApi.developmentUrl +  "like_dislike_post"
     static let set_favourite = WebServicesApi.baseUrl +  "set_favourite"
     static let report_user = WebServicesApi.baseUrl +  "report_user"
     static let getcomment = WebServicesApi.baseUrl +  "getcomment/"
     static let deleteComment = WebServicesApi.baseUrl +  "deletecomment"
     static let postcomment = WebServicesApi.baseUrl +  "postcomment"
-    static let get_post = WebServicesApi.baseUrl +  "get_post/"
-    static let addToCart = WebServicesApi.baseUrl +  "addtocart"
+    static let get_post = WebServicesApi.developmentUrl +  "get_post/"
+    static let addToCart = WebServicesApi.developmentUrl +  "addtocart"
     static let delete_card = WebServicesApi.baseUrl +  "delete_card"
     
     static let contactUs = WebServicesApi.baseUrl +  "contactus"
     static let changePassword = WebServicesApi.baseUrl +  "changePassword"
-    static let logout = WebServicesApi.baseUrl +  "logout"
+    static let logout = WebServicesApi.developmentUrl +  "logout"
     static let get_list_cards = WebServicesApi.baseUrl +  "get_list_cards"
     static let set_onOffNotification = WebServicesApi.baseUrl +  "set_onOffNotification"
     static let get_favourite = WebServicesApi.baseUrl +  "get_favourite?"
@@ -63,7 +66,7 @@ struct WebServicesApi {
     static let delete_address = WebServicesApi.baseUrl +  "delete_address"
     static let order_create = WebServicesApi.baseUrl +  "order_create"
     static let search_user = WebServicesApi.baseUrl +  "search_user?"
-    static let userprofile = WebServicesApi.baseUrl +  "userprofile/"
+    static let userprofile = WebServicesApi.developmentUrl +  "userprofile/"
     static let set_follow = WebServicesApi.baseUrl +  "set_follow"
     static let get_followers = WebServicesApi.baseUrl +  "get_followers"
     static let get_following = WebServicesApi.baseUrl +  "get_following"
